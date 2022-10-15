@@ -43,6 +43,7 @@ git pull//从远层把代码拿过来
 git branch//显示分支
 git branch new_branch_Id//创建一个分支，带主分支上进行更改
 git checkout -b new_branch_Id//，创建一个分支，并转移到新分支
+git checkout name//转换分支
 //回到主分支之后代码是一样的
 git merge new_feature//把新的代码改到主分支
 git checkout -D id //删除分支
