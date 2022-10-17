@@ -120,7 +120,7 @@ CSMA/CD协议中，要发送数据的站，**在监听到信道变为空闲就�
 
 CSMA/CA协议中，在信道从忙态转为空闲时，各站就要执行退避算法。这样做就减少了发生碰撞的概率。   
 
-### CSMA/CA算法归纳如下:    
+## CSMA/CA算法归纳如下:    
 
 (1)若站点最初有数据要发送(而不是发送不成功再进行重传)，且检测到信道空闲，在等待时间DIFS后，就发送整个数据帧。    
 
@@ -167,3 +167,31 @@ ACK（acknowledge）
 The Actual Throughput
 
 由于ACK，有50%的带宽浪费
+
+## 802.11数据帧结构
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/1c5f5e4f1c4d4595bf1c24883e841358.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQwMjI4MjAw,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center)
+
+
+
+1、Frame Control 帧控制字段，含有许多标识位，表示本帧的一些类型等信息。 该字段将在下文中详细介绍。
+3、Address 与802.3以太网传输机制不同，802.11无线局域网数据帧一共可以有4个MAC地址，这些地址根据帧的不同而又不同的含义，**但是基本上第一个地址表示接收端MAC地址**，**第二个地址表示发送端MAC地址**，**第三个地址表示过滤地址**。关于Address字段的详解请见后文。
+4、Seq-ctl 顺序控制位，该字段用于数据帧分片时**重组数据帧片段以及丢弃重复帧**。
+5、Frame Body **帧所包含的数据包**。
+6、**FCS 帧校验和**，主要用于检查帧的完整性。
+
+
+
+>
+> 2、Duration ID 持续时间和ID位，本字段一共有16bit，根据第14bit和15bit的取值，本字段有以下三种类型的含义：
+> （1）当第15bit被设置为0时，该字段表示该数据帧所传输要使用的时间，单位为微秒。（这与无线局域网传输介质有关，详情我将在后续博客CSMD/CA篇章中介绍。）
+> （2）当第15bit被设置为1，第14bit也为0时，该字段用于让没有收到Beacon新标帧（管理帧的一种）公告免竞争时间。
+> （3）当第15bit被设置为1，第14bit为1时，该字段主要用于STA告知AP其关闭天线，将要处于休眠状态，并委托AP暂时存储发往该STA的数据帧。此时该字段为一种标识符，以便在STA接触休眠后从AP中获得为其暂存的帧。
+
+To DS，是否向DS（Distribution System）发送。
+
+From DS，看时候来自DS
+
+![image-20221017090709030](weak_6.assets/image-20221017090709030.png)
+
+IBSS是指发到以太网
