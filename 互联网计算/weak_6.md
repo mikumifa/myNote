@@ -68,7 +68,7 @@ Data Frames in 802.11 WLAN
 
 ![image-20221010114052062](C:\Users\10550\AppData\Roaming\Typora\typora-user-images\image-20221010114052062.png)
 
-
+地址三，此为长度48 个 bit 的 IEEE MAC 识别码，代表负责处理该帧的无线工作站
 
 ？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？序号控制，用于acknowledge
 
@@ -90,7 +90,7 @@ Carrier Sense Multiple Access/Collision detection
 
 Carrier Sense Multiple Access/Collision Avoidance
 
-协议的目的是减少碰撞发生的概率。
+协议的目的是减少碰撞发生的概率。发送出问题的站是隐藏还是exposed
 
 ![image-20221010114457962](C:\Users\10550\AppData\Roaming\Typora\typora-user-images\image-20221010114457962.png)
 
@@ -182,8 +182,7 @@ The Actual Throughput
 
 
 
->
-> 2、Duration ID 持续时间和ID位，本字段一共有16bit，根据第14bit和15bit的取值，本字段有以下三种类型的含义：
+>2、Duration ID 持续时间和ID位，本字段一共有16bit，根据第14bit和15bit的取值，本字段有以下三种类型的含义：
 > （1）当第15bit被设置为0时，该字段表示该数据帧所传输要使用的时间，单位为微秒。（这与无线局域网传输介质有关，详情我将在后续博客CSMD/CA篇章中介绍。）
 > （2）当第15bit被设置为1，第14bit也为0时，该字段用于让没有收到Beacon新标帧（管理帧的一种）公告免竞争时间。
 > （3）当第15bit被设置为1，第14bit为1时，该字段主要用于STA告知AP其关闭天线，将要处于休眠状态，并委托AP暂时存储发往该STA的数据帧。此时该字段为一种标识符，以便在STA接触休眠后从AP中获得为其暂存的帧。
