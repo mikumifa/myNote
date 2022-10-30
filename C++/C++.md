@@ -980,7 +980,7 @@ warning(error:160)
 3. 块级作用域:在Stack中，同一个代码块内可见，比如while循环中定义的一个变量
 
 4. 文件级作用域:在A和B中的process()是不同函数的，同一个文件中可见
-  协同:B中使用A中的，需要标明extern，然后在编译前确认查找
+    协同:B中使用A中的，需要标明extern，然后在编译前确认查找
 
   ```
   extern float salary;
@@ -1035,3 +1035,50 @@ warning(error:160)
   ```
 
   头文件可以再次放置头文件
+
+## 常量指针
+
+常量指针的值无法被修改
+
+![image-20221029160217721](C++.assets/image-20221029160217721.png)
+
+![image-20221029160508376](C++.assets/image-20221029160508376.png)
+
+## 数组的升纬和降纬
+
+![image-20221029161020001](C++.assets/image-20221029161020001.png)
+
+![image-20221029161034135](C++.assets/image-20221029161034135.png)
+
+![image-20221029161116472](C++.assets/image-20221029161116472.png)
+
+二维数组的空间是连续的，所以可以
+
+```c++
+class Solution {
+public:
+    vector<int> inorderTraversal(TreeNode* root) {
+        vector<int> nodes;
+        stack<TreeNode*> todo;
+        while (root || !todo.empty()) {
+            while (root) {
+                todo.push(root);
+                root = root -> left;
+            }
+            root = todo.top();
+            todo.pop();
+            nodes.push_back(root -> val);
+            root = root -> right;
+        }
+        return nodes;
+    }
+};
+//中序遍历，LeetCode的做法
+```
+
+## 二叉搜索树
+
+```
+或者是具有下列性质的二叉树： 若它的左子树不空，则左子树上所有结点的值均小于它的根结点的值； 若它的右子树不空，则右子树上所有结点的值均大于它的根结点的值； 它的左、右子树也分别为二叉排序树。二叉搜索树作为一种经典的数据结构，它既有链表的快速插入与删除操作的特点，又有数组快速查找的优势；所以应用十分广泛，例如在文件系统和数据库系统一般会采用这种数据结构进行高效率的排序与检索操作
+```
+

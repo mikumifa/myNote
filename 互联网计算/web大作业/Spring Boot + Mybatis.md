@@ -383,6 +383,29 @@ application.properties文件和application.yml文件。他们的作用都是修�
 
   ## 数据重用与合并
 
+  ![image-20221026145034009](Spring%20Boot%20+%20Mybatis.assets/image-20221026145034009.png)
+
+  ![image-20221026145230549](Spring%20Boot%20+%20Mybatis.assets/image-20221026145230549.png)
+  
+  
+  
+  ![image-20221026145743188](Spring%20Boot%20+%20Mybatis.assets/image-20221026145743188.png)美元符号加上大括号是引用
+  
+  
+  
+  ![image-20221026150104789](Spring%20Boot%20+%20Mybatis.assets/image-20221026150104789.png)
+  
+  注入一个值。
+  
+  ![image-20221026150526926](Spring%20Boot%20+%20Mybatis.assets/image-20221026150526926.png)
+  
+  ![image-20221026150253190](Spring%20Boot%20+%20Mybatis.assets/image-20221026150253190.png)
+  
+  - Profile
+  - 有一个注解@Configuration（翻译：配置）可以供使用
+    1.创建一个类。
+    2.使用注解@Configuration，告诉Spring Boot这是一个配置类。
+  - @ConfigurationProperties最适用于所有具有相同前缀的分层属性，用于将配置文件中mail开头的属性绑定到POJO中,@[Configuration](https://so.csdn.net/so/search?q=Configuration&spm=1001.2101.3001.7020)也可以替换成@Component、@Service等其他注解
   - 为了保持内容的简洁，避免过多重复的定义，YAML 提供了由**锚点标签“&”**和**引用标签“\*”**组成的语法，利用这套语法可以快速引用相同的一些数据...
 
   ```yaml
@@ -405,9 +428,9 @@ application.properties文件和application.yml文件。他们的作用都是修�
     "three": 3
   }
   ```
-
+  
   - 配合**合并标签“<<”**使用可以与任意数据进行合并，你可以把这套操作想象成面向对象语言中的继承...
-
+  
   ```yaml
   # YAML
   human: &base # 添加名为 base 的锚点
@@ -593,3 +616,203 @@ public void testMethod(){}
 下面看不懂
 
 ![image-20221017201426682](Spring Boot + Mybatis.assets/image-20221017201426682.png)
+
+![image-20221026151918280](Spring%20Boot%20+%20Mybatis.assets/image-20221026151918280.png)
+
+加载不同的配置
+
+spring.profiles.active=dev
+
+![image-20221026152039878](Spring%20Boot%20+%20Mybatis.assets/image-20221026152039878.png)
+
+完成配置的激活和切换
+
+也可以配置虚拟机和命令行的参数![image-20221026152212551](Spring%20Boot%20+%20Mybatis.assets/image-20221026152212551.png)
+
+![image-20221026152222654](Spring%20Boot%20+%20Mybatis.assets/image-20221026152222654.png)
+
+![image-20221026152327062](Spring%20Boot%20+%20Mybatis.assets/image-20221026152327062.png)
+
+打包
+
+![image-20221026152506374](Spring%20Boot%20+%20Mybatis.assets/image-20221026152506374.png)
+
+![image-20221026152607943](Spring%20Boot%20+%20Mybatis.assets/image-20221026152607943.png)
+
+classpath是resource
+
+![image-20221026153125431](Spring%20Boot%20+%20Mybatis.assets/image-20221026153125431.png)
+
+![image-20221026153216702](Spring%20Boot%20+%20Mybatis.assets/image-20221026153216702.png)	
+
+![image-20221026153258544](Spring%20Boot%20+%20Mybatis.assets/image-20221026153258544.png)
+
+![image-20221026154716965](Spring%20Boot%20+%20Mybatis.assets/image-20221026154716965.png)
+
+![image-20221026154759767](Spring%20Boot%20+%20Mybatis.assets/image-20221026154759767.png)
+
+![image-20221026154907070](Spring%20Boot%20+%20Mybatis.assets/image-20221026154907070.png)
+
+![image-20221026154931399](Spring%20Boot%20+%20Mybatis.assets/image-20221026154931399.png)
+
+![image-20221026155042832](Spring%20Boot%20+%20Mybatis.assets/image-20221026155042832.png)
+
+![image-20221026155135469](Spring%20Boot%20+%20Mybatis.assets/image-20221026155135469.png)
+
+![image-20221026155207076](Spring%20Boot%20+%20Mybatis.assets/image-20221026155207076.png)
+
+![image-20221026155337071](Spring%20Boot%20+%20Mybatis.assets/image-20221026155337071.png)
+
+![image-20221026155411086](Spring%20Boot%20+%20Mybatis.assets/image-20221026155411086.png)
+
+![image-20221026155428387](Spring%20Boot%20+%20Mybatis.assets/image-20221026155428387.png)
+
+servlet收集用户的请求
+
+![image-20221026164947513](Spring%20Boot%20+%20Mybatis.assets/image-20221026164947513.png)
+
+![image-20221026170348137](Spring%20Boot%20+%20Mybatis.assets/image-20221026170348137.png)
+
+@Controller控制器
+
+@RequestMapping（value=“/”）
+
+当浏览器发送的请求是/的时候会调用这个方法
+
+## HTML
+
+全局的标签
+
+```
+<!DOCTYPE html>	<!-- 声明这个html页面使用的版本，这样写代表是H5最新版本 -->
+<html>
+  <head>
+  <meta charset="utf-8">  <!-- 告诉浏览器使用的是utf-8字符集 -->
+      <title>我的网站</title>	<!-- 这里用来编写网站的标题，显示在浏览器选项卡的位置 -->
+  </head>
+  <body>	<!-- 只有body标签里面的内容，才能真正显示在浏览器的窗口中 -->
+    <h1>我的第一个标签</h1>
+    
+    <p>我的第一个段落</p>
+  </body>
+</html>
+```
+
+```
+<h1>最大的标题</h1>
+<h2>标题二</h2>
+<h3>标题三</h3>
+<h4>标题四</h4>
+<h5>标题五</h5>
+<h6>标题六</h6>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf8" />
+        <title>标题--HTML基础语法学习</title>
+    </head>
+    <body>
+        <h1>我是一个h1标题</h1>
+        <h2>我是一个h2标题</h2>
+        <h3>我是一个h3标题</h3>
+        <h4>我是一个h4标题</h4>
+        <h5>我是一个h5标题</h5>
+        <h6>我是一个h6标题</h6>
+    </body>
+</html>
+
+<p>
+	近日，西安女车主坐在66万买的奔驰车引擎盖上无奈维权引发各界密切关注。除了车本身的质量问题，该车主还质疑4S店诱其贷款收取的“金融服务费”存在欺诈。贷款买车究竟有哪些渠道？“金融服务费”是不是合理收费？贷款买车会遭遇哪些套路？消费者提前防范别踩坑里？北京青年报记者就这些问题采访了众多专业人士。
+	据了解，汽车金融业务包括三种较为常见的模式。第一种为银行车贷，消费者向申请住房按揭一样向银行申请贷款，按照一定利率按月还款；第二种为信用卡分期，指持卡人同意支付首付款的情况下，向银行申请用其信用卡在银行指定的经销商购买家用汽车，经银行核准后，将审批通过金额平均分成若干期，由持卡人在约定期限内按月还款，并支付一定手续费。第三种模式为消费者向汽车金融公司申请贷款。也是西安奔驰维权事件中女车主选择的方式。第四种是近年来新兴的汽车融资租赁，即通过“以租代购、分期付款”的方式购车。
+</p>
+
+<img src="haha.jpg" title="图片的标题" alt="图片的属性" width="100px" height="100px" />
+
+<img src="haha.jpg" />   <!--当前目录-->
+<img src="./haha.jpg" /> <!-- 当前目录 -->
+<img src="../haha.jpg" /> <!-- 上一级目录 -->
+<img sr="C:\Users\Administrator\Pictures\timg.jpg" />//绝对路径
+
+
+<ul>
+    <li>第一个列表内容</li>
+    <li>第二个列表内容</li>
+</ul>//无序列表
+
+<ol>
+    <li>第一个列表内容</li>
+    <li>第二个列表内容</li>
+</ol>
+//有序列表
+<a href="https://www.bilibili.com/" target="_blank" title="点击可跳转到哔哩哔哩">哔哩哔哩</a>
+<a href="跳转目标" target="目标窗口的弹出方式" title="超链接的介绍信息">文本或图像</a>
+二、三种重要属性
+1.href属性
+href属性是超链接标签必须存在的属性，href用于连接目标的URL地址。
+
+2.target属性
+target用于指定页面的连接方式。其中_self是默认值，即在当前窗口打开连接的打卡方式，_blank为在新窗口的打开方式。
+
+3.title属性
+title为超链接设置一些介绍信息。当鼠标移到设置了title属性的超链接上时，会显示title属性值的内容。
+
+```
+
+![image-20221026172544461](Spring%20Boot%20+%20Mybatis.assets/image-20221026172544461.png)
+
+xmlns的功能
+
+### 2、@RequestMapping注解的位置
+
+@RequestMapping标识一个类：设置映射请求的请求路径的初始信息
+
+@RequestMapping标识一个方法：设置映射请求请求路径的具体信息
+
+类上面有，方法上也有，可以相当于加上一层路径。
+
+设置的属性越多，越精确
+
+![image-20221026174529219](Spring%20Boot%20+%20Mybatis.assets/image-20221026174529219.png)
+
+1、对于处理指定请求方式的控制器方法，SpringMVC中提供了@RequestMapping的派生注解
+
+处理get请求的映射-->@GetMapping
+
+处理post请求的映射-->@PostMapping
+
+处理put请求的映射-->@PutMapping
+
+处理delete请求的映射-->@DeleteMapping
+
+2、常用的请求方式有get，post，put，delete
+
+post,put提供数据，post侧重于增加，put是修改，
+
+get是获取数据
+
+delete是删除
+
+![*image-20221026200147571*](Spring%20Boot%20+%20Mybatis.assets/image-20221026200147571.png)
+
+[@Autowired注解的正确用法 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/59859778)
+
+自动注入
+
+DAO(Data Access Object)是一个数据访问接口，数据访问：顾名思义就是与数据库打交道。夹在[业务逻辑](https://baike.baidu.com/item/业务逻辑?fromModule=lemma_inlink)与数据库资源中间。
+
+[![img](Spring%20Boot%20+%20Mybatis.assets/resize,m_lfit,w_184,limit_1.jpeg)](https://baike.baidu.com/pic/DAO/2900358/0/9dc3cf58ae3b5e92800a18bc?fr=lemma&fromModule=lemma_content-image&ct=single)
+
+在核心[J2EE](https://baike.baidu.com/item/J2EE?fromModule=lemma_inlink)模式中是这样介绍DAO模式的：为了建立一个健壮的J2EE应用，应该将所有对[数据源](https://baike.baidu.com/item/数据源?fromModule=lemma_inlink)的访问操作抽象封装在一个公共[API](https://baike.baidu.com/item/API/10154?fromModule=lemma_inlink)中。用程序设计的语言来说，就是建立一个接口，接口中定义了此应用程序中将会用到的所有[事务](https://baike.baidu.com/item/事务?fromModule=lemma_inlink)方法。在这个应用程序中，当需要和数据源进行交互的时候则使用这个接口，并且编写一个单独的类来实现这个接口在逻辑上对应这个特定的数据存储。
+
+@RequestBody：
+
+作用：
+
+主要用来接收**前端传递给后端**的**json字符串中的数据的**(请求体中的数据的)；
+
+config.log()
+
+# **JdbcTemplate**
+
+是Spring对数据库的封装
