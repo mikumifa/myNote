@@ -118,3 +118,87 @@ RAM，Randrom access  Memory断电之久借没有数据了
 ![image-20221020115417021](weak_7.assets/image-20221020115417021.png)
 
 ARP返回地址
+
+## Connection oriented network services,
+
+面向连接的网络服务
+
+在数据传输直接，连接是必须的
+
+## Circuit switched
+
+所有的的parket通过相同的信道，通过相同的虚拟电路。
+
+## Connectionless network services
+
+分别对待包
+
+IP是一个无线的系统
+
+## Packet switched
+
+选择不同的路径，
+
+没有顺序的到达，
+
+设备为每一个packet做路径选择，每个packet的标准不同
+
+（虚电路和数据报服务的区别，看书上）
+
+## Routed protocol
+
+
+
+![image-20221024104417604](weak_7.assets/image-20221024104417604.png)
+
+Routing路由表
+
+![image-20221024104619731](weak_7.assets/image-20221024104619731.png)
+
+（（地址解析协议）ARP是ip得到mac地址的方法）
+
+![image-20221024105308890](weak_7.assets/image-20221024105308890.png)
+
+![image-20221024105340750](weak_7.assets/image-20221024105340750.png)
+
+## IGP，EGP
+
+EGP不学（EGP不同的自治系统之间 交流）
+
+IGP是内部网关协议
+
+![image-20221024105752635](weak_7.assets/image-20221024105752635.png)
+
+IGP的2个分类：![image-20221024105844373](weak_7.assets/image-20221024105844373.png)
+
+![image-20221024111631972](weak_7.assets/image-20221024111631972.png)
+
+一开始A只可以看到w和x。
+
+RIP，和相邻的路由器交换信息
+
+（目的网段，距离，下一条的路由器，）
+
+
+
+会定期更新
+
+Link state routing
+
+交换Topological Datebase
+
+SFP,最短路径算法，
+
+每个网络获得网络的视野，
+
+生成一个树，根据树生成一个路由表，
+
+value是带款
+
+![image-20221024113441872](weak_7.assets/image-20221024113441872.png)
+
+![image-20221024113544509](weak_7.assets/image-20221024113544509.png)
+
+![image-20221024113632180](weak_7.assets/image-20221024113632180.png)
+
+![image-20221024113703497](weak_7.assets/image-20221024113703497.png)
