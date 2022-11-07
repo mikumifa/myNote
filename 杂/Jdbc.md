@@ -117,3 +117,5 @@ resultSet.getDate（）用来取resultSet的多少列
 使用prepareStatement
 
 ![image-20221029224044214](Jdbc.assets/image-20221029224044214.png)
+
+、
