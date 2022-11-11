@@ -73,15 +73,25 @@ K-路组映射
 
 ![image-20221103163949633](https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211031639665.png)
 
-k，一组中有k行
+k，一组中有k行，C/S                                                                                                                                                                                                                                                               
 
 主存的块可以被映射到固定组的任意一行
 
 ![image-20221103164332474](https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211031643520.png)
 
-## 替换算法
+关联度低-》牺牲命中率，提高命中的时间好额外的空间开销。
+
+## 替换算法（主要对快来考虑的）
 
 替换算法通过硬件来实现，设计替换算法的目的是提高命中率
+
+| 最近最少使用算法 LRULeast Recently Used | 最长时间没有被使用的替换了 | 每组的每一行要有logk个标记 |
+| --------------------------------------- | -------------------------- | -------------------------- |
+| 先进先出算法first in  first out         | Cache中最长停留的替换了    |                            |
+| 最不经常使用算法Least Frequently Used   | 访问次数最少的替换了       |                            |
+| 随机替换                                |                            |                            |
+
+
 
 ### LRU
 
@@ -140,4 +150,4 @@ LRU的提高效果没有那么高
 
 ![image-20221103174351848](https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211031743879.png)
 
-![image-20221103174618992](https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211031746026.png)
+![image-20221103174618992](https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211031746026.png) 
